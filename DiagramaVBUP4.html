@@ -4669,22 +4669,23 @@
         }
 
         
-        .capturarTela{
-            width: 100%;
-            max-width: 160px; /* Ajuste o valor máximo conforme necessário */
+        .enviarpedido{
+            width: 80%;
+            max-width: 130px; /* Ajuste o valor máximo conforme necessário */
             margin-top: 10px;
             border-radius: 2px;
             height: 35px;
             background-color: #9a9dad71;
             border-color: #273a4d;
-            color: rgb(122, 204, 252);
+            color: rgba(255, 255, 255, 0.76);
             cursor: pointer;
-            margin-left: -40%;
+            margin-left: -45%;
             position: absolute;
+            
         }
         .removerTodos {
-            width: 100%;
-            max-width: 160px; /* Ajuste o valor máximo conforme necessário */
+            width: 80%;
+            max-width: 130px; /* Ajuste o valor máximo conforme necessário */
             margin-top: 10px;
             border-radius: 2px;
             height: 35px;
@@ -4692,9 +4693,23 @@
             border-color: #273a4d;
             color: rgb(231, 138, 138);
             cursor: pointer;
-            margin-left: 9%;
+            margin-left: 19.2%;
             position: absolute;
         }
+        .capturarTela {
+            width: 80%;
+            max-width: 130px; /* Ajuste o valor máximo conforme necessário */
+            margin-top: 10px;
+            border-radius: 2px;
+            height: 35px;
+            background-color: #9a9dad71;
+            border-color: #273a4d;
+            color: rgb(122, 204, 252);
+            cursor: pointer;
+            margin-left: -13%;
+            position: absolute;
+        }
+        
 
 
 
@@ -4736,9 +4751,6 @@
         
     
         .capturarTela2{
-            width: 100%;
-            max-width: 160px; /* Ajuste o valor máximo conforme necessário */
-            margin-top: 10px;
             border-radius: 2px;
             height: 35px;
             background-color: #9a9dad71;
@@ -4747,15 +4759,12 @@
             cursor: pointer;
             margin-left: -40%;
             position: absolute;
-            width: 80%;
-            max-width: 120px; /* Ajuste o valor máximo conforme necessário */
-            margin-top: 10px;
-            margin-left: -130px;
+            width: 100%;
+            max-width: 140px; /* Ajuste o valor máximo conforme necessário */
+            margin-top: 50px;
+            margin-left: -142px;
         }
         .removerTodos2{
-            width: 100%;
-            max-width: 160px; /* Ajuste o valor máximo conforme necessário */
-            margin-top: 10px;
             border-radius: 2px;
             height: 35px;
             background-color: #9a9dad71;
@@ -4764,11 +4773,26 @@
             cursor: pointer;
             margin-left: 9%;
             position: absolute;
-            width: 80%;
-            max-width: 120px; /* Ajuste o valor máximo conforme necessário */
-            margin-top: 10px;
-            margin-left: 10px;
+            width: 100%;
+            max-width: 140px; /* Ajuste o valor máximo conforme necessário */
+            margin-top: 50px;
+            margin-left: 3px;
         }
+        .enviarpedido2{
+            border-radius: 2px;
+            height: 35px;
+            background-color: #9a9dad71;
+            border-color: #0a0000;
+            color: rgba(255, 255, 255, 0.76);
+            cursor: pointer;
+            margin-left: 9%;
+            position: absolute;
+            width: 100%;
+            max-width: 284px; /* Ajuste o valor máximo conforme necessário */
+            margin-top: 10px;
+            margin-left: -142px;
+        }
+
         #foradelinha{
             color: #ec6b6b;
         }
@@ -13392,6 +13416,63 @@ transform: rotate(16deg);
     left: 15px;
 }
 
+#confirmacaoPedido {
+    position: fixed; /* Define a posição fixa */
+    top: 50%; /* Alinha o topo da div ao centro vertical da janela */
+    left: 50%; /* Alinha a esquerda da div ao centro horizontal da janela */
+    transform: translate(-50%, -50%); /* Move a div de volta 50% da sua largura e altura, para que o centro esteja exatamente no centro da tela */
+    text-align: center;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e0e0e0; /* Tom mais escuro, porém não forte */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    border-color: #746f6f;
+}
+
+        #h1confirmacao {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif; /* Aplicando a fonte Roboto */        }
+
+        .botaoconfirma {
+            
+            padding: 15px 30px; /* Botões mais largos */
+            font-size: 16px; /* Tamanho da fonte um pouco maior */
+            cursor: pointer;
+            border-radius: 5px; /* Mais arredondados */
+            transition: background-color 0.3s;
+            margin: 0 10px; /* Espaçamento entre os botões */
+            background-color: #717972;
+
+        }
+
+        #botaoSim {
+            color: #fff;
+            border-color: rgb(89, 177, 115);
+        }
+
+        #botaoNao {
+            color: #fff;
+            border-color: rgb(206, 102, 102);
+        }
+
+        #botaoNao:hover {
+            background-color: #d68a8a; /* Altera a cor no hover apenas para o botão "NÃO" */
+        }
+        #botaoSim:hover {
+            background-color: #80bd92; /* Altera a cor no hover apenas para o botão "NÃO" */
+        }
+        #barraProgresso {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0; /* Começa sem largura */
+        height: 10px;
+        background-color: #75ec99; /* Cor da barra de progresso */
+        transition: width 1s linear; /* Animação da largura da barra de progresso */
+        }
 
     </style>
 </head>
@@ -13412,11 +13493,12 @@ transform: rotate(16deg);
                     <input id="inputemail" placeholder="exemple@exemple.com" type="text"><br>
                     <label id="labeltelefone" for="">Telefone: </label>
                     <input id="inputtelefone" placeholder="051999999999" type="number"><br>
-                    <button class="capturarTela" id="capturarTela" onclick="salvarItens()">Salvar Itens</button>
-                    <button class="removerTodos" id="removerTodos" onclick="removerItens()">Remover Todos</button>
+                    <button class="capturarTela" id="capturarTela" onclick="salvarItens()">Salvar itens</button>
+                    <button class="removerTodos" id="removerTodos" onclick="removerItens()">Remover todos</button>
+                    <button class="enviarpedido" id="enviarpedido" onclick="botaoConfirmacao()">Enviar pedido</button>
                 </div>
                 <p><br></p>
-                <p><b>PEDIDOS</b><br></p>
+                <p><b></b><br></p>
                 <ul class="pedidoclassul" id="pedidosUl">
                     <!-- Itens adicionados serão inseridos aqui -->
                 </ul>
@@ -13445,7 +13527,6 @@ transform: rotate(16deg);
         <img onclick="clicarImagem()" id="imagemVBSC69ip55hidraulica" src="VBOC6425hidraulica55.png" alt="">
         <img onclick="clicarImagem()" id="imagemVBSC68ip55hidraulica" src="VBSC67hidraulica.png" alt="">
         <img onclick="clicarImagem()" id="imagemVBSC69ip55hidraulica99" src="VBSC69hidraulica69.png" alt="">
-
 
         <button id="voltando" onclick="voltar()">VOLTAR AO CATÁLOGO</button>
         <button id="voltandoVmu6" onclick="voltar()" >VOLTAR AO CATÁLOGO</button>
@@ -14453,6 +14534,8 @@ transform: rotate(16deg);
 <!-----------------------------------------------------------------------------
 ------------------------------HIDRÁULICA VBSC68ip55-------------------------------------
 -------------------------------------------------------------------------------Concluido--> 
+
+
 
 
 
@@ -26892,6 +26975,13 @@ transform: rotate(16deg);
                     </div>
                 </div>                
             </div>
+
+            <div id="confirmacaoPedido">
+                <h1 id="h1confirmacao">Deseja enviar o pedido à fábrica?</h1>
+                <button class="botaoconfirma" id="botaoSim" onclick="botaoConfirmacaoSim()">SIM</button>
+                <button class="botaoconfirma" id="botaoNao" onclick="botaoConfirmacaoNao()">NÃO</button>       
+                <div id="barraProgresso"></div> <!-- Barra de progresso -->
+            </div>
             
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
@@ -26928,6 +27018,8 @@ transform: rotate(16deg);
         document.querySelector('#containerInicioC').style.display ='block'    
     }
     function telaDePedidos(){
+        const botaoenviarpedido = document.querySelector('#enviarpedido')
+        botaoenviarpedido.className = 'enviarpedido2'
         const containerDoPedido = document.querySelector('#pedidos')
         containerDoPedido.className = 'divPecas21'
         const botaoRemover = document.querySelector('#removerTodos')
@@ -26944,6 +27036,102 @@ transform: rotate(16deg);
 
 
         // FUNÇÕES DOS MOTORES E OUTROS
+
+        function botaoConfirmacaoSim() {          
+
+            
+    const inputpedido1 = document.querySelector('#inputnome');
+    const inputpedido2 = document.querySelector('#inputempresa');
+    const inputpedido3 = document.querySelector('#inputemail');
+    const inputpedido4 = document.querySelector('#inputtelefone');
+
+    if (inputpedido1.value == '' || inputpedido2.value == '' || inputpedido3.value == '' || inputpedido4.value == '') {
+        alert('Para salvar o pedido, preencha o formulário');
+    } else if (!inputpedido3.value.includes('@')) {
+        alert("Digite seu email corretamente");
+    } else if (inputpedido4.value.length < 11) {
+        alert("Digite seu telefone completo, com o DDD. Ex: 051999999999");
+    } else {
+
+        // Exibir a barra de progresso
+        var barraProgresso = document.getElementById('barraProgresso');
+            barraProgresso.style.width = '100%'; // Largura da barra de progresso em 100%
+            // Aguardar 1 segundo para simular um carregamento
+            setTimeout(function() {
+                // Após 1 segundo, exibir a mensagem de confirmação
+                alert('Pedido enviado à fábrica com sucesso!');
+                document.querySelector('#confirmacaoPedido').style.display ='none';
+
+                // Redefinir a largura da barra de progresso para 0 imediatamente
+                barraProgresso.style.width = '0';
+            }, 1000); // 1000 milissegundos = 1 segundo
+
+
+
+
+        // Obtém a referência para a lista de pedidos
+        const pedidosUl = document.getElementById('pedidosUl');
+
+        // Obtém os elementos da lista de pedidos
+        const listaPedidos = pedidosUl.getElementsByClassName('pedidoLi');
+
+        // Cria um array para armazenar os itens visíveis
+        const itensVisiveis = [];
+
+        // Adiciona os itens visíveis ao array
+        for (const pedidoLi of listaPedidos) {
+            itensVisiveis.push(pedidoLi.textContent.replace('Remover', ''));
+        }
+
+        // Adiciona os dados dos inputs ao array de itensVisiveis
+        itensVisiveis.unshift(`Nome: ${inputpedido1.value}\nEmpresa: ${inputpedido2.value}\nEmail: ${inputpedido3.value}\nTelefone: ${inputpedido4.value}\n\n`);
+        
+
+
+
+    const templateParams={
+    from_name: `${inputpedido1.value}`,
+    message: `${itensVisiveis.join('\n\n')}`,
+    email: `${inputpedido3.value}`
+}
+
+    emailjs.send("service_4altwmi", "template_t95vjf2", templateParams, "nxBqRVgZ00BUnxJKv")
+    .then((response)=>{
+        console.log("Enviado")
+    },(err)=>{
+        concole.log(err)
+    })
+    
+}
+    
+    
+}
+            
+
+
+function botaoConfirmacaoNao() {
+    document.querySelector('#confirmacaoPedido').style.display ='none';
+}
+
+function botaoConfirmacao(){
+    const inputpedido1 = document.querySelector('#inputnome');
+    const inputpedido2 = document.querySelector('#inputempresa');
+    const inputpedido3 = document.querySelector('#inputemail');
+    const inputpedido4 = document.querySelector('#inputtelefone');
+
+    if (inputpedido1.value == '' || inputpedido2.value == '' || inputpedido3.value == '' || inputpedido4.value == '') {
+        alert('Para enviar o pedido, preencha o formulário');
+    } else if (!inputpedido3.value.includes('@')) {
+        alert("Digite seu email corretamente");
+    } else if (inputpedido4.value.length < 11) {
+        alert("Digite seu telefone completo, com o DDD. Ex: 051999999999");
+    } else { 
+        document.querySelector('#confirmacaoPedido').style.display ='block'
+
+    }
+}
+
+        
         
 function vhu48f(){
     
@@ -27690,6 +27878,7 @@ function vmsp640(){
 }
 function voltar(){  
     // HIDRAULICAVBSC69---
+document.querySelector('#confirmacaoPedido').style.display ='none'
 document.querySelector('#imagemVBSC69ip55hidraulica99').style.display ='none'
 document.querySelector('#entradadaguavbc69').style.display ='none'
 document.querySelector('#tampaovbc69').style.display ='none'
@@ -29300,6 +29489,8 @@ document.querySelector('#hEntradaDagua1').style.display = 'none'
             botaoRemover.className = 'removerTodos'
             const botaoSalvar = document.querySelector('#capturarTela')
             botaoSalvar.className ='capturarTela'
+            const botaoenviarpedido = document.querySelector('#enviarpedido')
+            botaoenviarpedido.className = 'enviarpedido'
 
 
 }
@@ -30353,6 +30544,10 @@ document.querySelector('#estagiozaviovbc69').style.display ='block'
     document.querySelector('#uldobotao').style.display = 'none'
 
 }
+
+
+
+document.querySelector('#confirmacaoPedido').style.display ='none'
 
 // Hidraulica VBSC69ip55"
 document.querySelector('#codigovboc69h').style.display ='none'
@@ -53544,6 +53739,8 @@ document.querySelector('#codigovmspa625f').style.display ='none'
 
 }
         function clicarImagem(){
+document.querySelector('#confirmacaoPedido').style.display ='none'
+
 document.querySelector('#codigovboc69h').style.display ='none'
 document.querySelector('#codigovboc269h').style.display ='none'
 document.querySelector('#codigovboc369h').style.display ='none'
@@ -54130,6 +54327,8 @@ induzvmsp6.style.display = 'none'
         }
 
         function fecharEixo() {
+document.querySelector('#confirmacaoPedido').style.display ='none'
+
 document.querySelector('#codigovboc69h').style.display ='none'
 document.querySelector('#codigovboc269h').style.display ='none'
 document.querySelector('#codigovboc369h').style.display ='none'
@@ -56065,11 +56264,7 @@ discosuperiorvms6.style.display ='none'
             buchavmu6.style.display = 'none'
             document.querySelector('#codigo13').style.display ='none'
 
-        }
-
-
-
-        
+        }        
 
         let itensAdicionados = [];
 
@@ -56085,6 +56280,8 @@ function removerPedido(element) {
         itensAdicionados.splice(indexRemover, 1);
     }
 }
+
+
 
 
 
@@ -56132,6 +56329,7 @@ function salvarItens() {
         link.click();
         document.body.removeChild(link);
 
+
     const templateParams={
     from_name: `${inputpedido1.value}`,
     message: `${itensVisiveis.join('\n\n')}`,
@@ -56148,9 +56346,6 @@ function salvarItens() {
 
     
 }
-
-
-
 
 
 function removerItens() {
